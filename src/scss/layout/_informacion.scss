@@ -12,7 +12,8 @@
 
     &-texto {
         @include m.contenedor;
-        @include m.tablet{
+
+        @include m.tablet {
             @include m.grid(2);
         }
 
@@ -22,14 +23,19 @@
             height: auto;
             display: block;
             margin: 0 auto;
+            padding-bottom: 5rem;
+
+            @include m.tablet {
+                padding-bottom: 0;
+            }
         }
 
         p {
             background-color: v.$rojo2;
-            // color: v.$blanco;
             font-weight: 800;
             text-align: justify;
             padding: 3rem;
+            margin: auto;
 
         }
 

@@ -8,7 +8,7 @@ function bloquearNavegador() {
     const informacion = document.querySelector('.informacion');
 
     document.addEventListener('scroll', function () {
-        if (informacion.getBoundingClientRect().top < 10000) {
+        if (informacion.getBoundingClientRect().top < 1000) {
             header.classList.add('fixed');
         } else {
             header.classList.remove('fixed');

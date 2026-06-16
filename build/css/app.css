@@ -520,10 +520,17 @@ img {
   height: auto;
   display: block;
   margin: 0 auto;
+  padding-bottom: 5rem;
+}
+@media (min-width: 768px) {
+  .informacion-texto img {
+    padding-bottom: 0;
+  }
 }
 .informacion-texto p {
   background-color: #ff3936;
   font-weight: 800;
   text-align: justify;
   padding: 3rem;
+  margin: auto;
 }/*# sourceMappingURL=app.css.map */
