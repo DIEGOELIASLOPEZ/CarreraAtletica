@@ -352,7 +352,7 @@ a {
 }
 
 p {
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 1.5;
   color: #000000;
 }
@@ -506,13 +506,18 @@ img {
   width: 95%;
   max-width: 120rem;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .informacion-texto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 }
 .informacion-texto img {
   max-width: 100%;
   width: 40rem;
+  height: auto;
   display: block;
   margin: 0 auto;
 }

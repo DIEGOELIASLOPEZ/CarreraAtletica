@@ -16,12 +16,7 @@ function loopVideos() {
 
     reproductor.addEventListener('ended', function () {
 
-        if (reproductor.currentTime >= limiteTiempo) {
-            numeroVideo++;
-            if (numeroVideo > 4) {
-                numeroVideo = 1
-            }
-        }
+        numeroVideo = numeroVideo + 1;
 
     })
 
