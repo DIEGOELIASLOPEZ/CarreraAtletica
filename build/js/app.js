@@ -18,10 +18,10 @@ function loopVideos() {
 
         if (numeroVideo != limiteTiempo){
             numeroVideo = numeroVideo + 1;
-               reproductor.src = `src/video/video${numeroVideo}.mp4`         
+               reproductor.src = `src/video/video${numeroVideo}.mp4`;      
         }else{
             numeroVideo = 1;
-            reproductor.src = `src/video/video${numeroVideo}.mp4` 
+            reproductor.src = `src/video/video${numeroVideo}.mp4`;
         }
 
     })
