@@ -1,6 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
+    bloquearNavegador();
     loopVideos();
 })
+
+
+function bloquearNavegador(){
+    const header = document.querySelector('.header');
+    const informacion = document.querySelector('.informacion');
+
+    document.addEventListener('scroll', function(){
+        
+        if(informacion.getBoundingClientRect().bottom < 4000){
+            header.classList.add('fixed');
+            
+        }else{
+            header.classList.remove('fixed');
+        }
+
+    })
+}
 
 function loopVideos() {
     const video = document.createElement('VIDEO');

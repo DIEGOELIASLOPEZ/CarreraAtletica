@@ -2,10 +2,18 @@
 @use '../base/mixins' as m;
 
 .header {
+    z-index: 10;
     background-color: v.$gris-ocuso;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    &.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
 
     @include m.desktop {
         flex-direction: row;
@@ -19,6 +27,7 @@
     h1 {
         margin: 0;
         color: v.$blanco;
+
         span {
             color: v.$rojo;
         }
@@ -35,6 +44,7 @@
         gap: 2.5rem;
 
         a {
+            text-align: center;
             font-weight: 700;
             color: v.$blanco;
 
@@ -45,3 +55,5 @@
     }
 
 }
+
+

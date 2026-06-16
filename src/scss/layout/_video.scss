@@ -32,23 +32,26 @@
     gap: 3rem;
     margin: auto;
     flex-direction: column;
+    align-items: center;
+    justify-content: end;
 
-    @include m.tablet{
+    @include m.tablet {
         flex-direction: row;
         margin-left: 10rem;
     }
-    @include m.desktop{
+
+    @include m.desktop {
         flex-direction: row;
         margin-left: 30rem;
+
     }
+
     img {
         width: 20rem;
         height: auto;
     }
 
     h2 {
-        margin: 0;
-        font-size: 5rem;
         color: v.$blanco;
 
         span {
@@ -57,4 +60,23 @@
             line-height: 1.5rem;
         }
     }
+
+    p {
+        font-size: 3rem;
+        padding: 1rem 5rem;
+        background-color: v.$rojo;
+        font-weight: 800;
+        color: v.$blanco;
+
+        .distancia {
+            color: v.$negro;
+        }
+
+    }
+}
+
+.km-texto {
+    color: v.$negro;
+    font-size: 2rem;
+
 }

@@ -1,0 +1,37 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.informacion {
+    background-color: v.$rojo;
+    padding: 5rem 0;
+
+    h3 {
+        text-align: center;
+        color: v.$blanco;
+    }
+
+    &-texto {
+        @include m.contenedor;
+        @include m.grid(2);
+
+        img {
+            max-width: 100%;
+            width: 40rem;
+            display: block;
+            margin: 0 auto;
+        }
+
+        p {
+            background-color: v.$rojo2;
+            // color: v.$blanco;
+            font-weight: 800;
+            text-align: justify;
+            padding: 3rem;
+
+        }
+
+    }
+
+
+
+}

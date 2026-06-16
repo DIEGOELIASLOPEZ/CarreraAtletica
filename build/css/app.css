@@ -337,12 +337,22 @@ h1 span {
   color: #ff0400;
 }
 
-p, a {
+h2 {
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 5.2rem;
+  text-transform: uppercase;
+}
+
+p,
+a {
   font-family: "Barlow", sans-serif;
 }
 
 p {
-  font-size: 5rem;
+  font-size: 2.5rem;
   line-height: 1.5;
   color: #000000;
 }
@@ -361,10 +371,17 @@ img {
 }
 
 .header {
+  z-index: 10;
   background-color: #191919;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+.header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 @media (min-width: 1080px) {
   .header {
@@ -397,6 +414,7 @@ img {
   gap: 2.5rem;
 }
 .header .header-informacion a {
+  text-align: center;
   font-weight: 700;
   color: #ffffff;
 }
@@ -433,6 +451,8 @@ img {
   gap: 3rem;
   margin: auto;
   flex-direction: column;
+  align-items: center;
+  justify-content: end;
 }
 @media (min-width: 768px) {
   .video-texto {
@@ -451,12 +471,54 @@ img {
   height: auto;
 }
 .video-texto h2 {
-  margin: 0;
-  font-size: 5rem;
   color: #ffffff;
 }
 .video-texto h2 span {
   color: #ff0400;
   margin: 0;
   line-height: 1.5rem;
+}
+.video-texto p {
+  font-size: 3rem;
+  padding: 1rem 5rem;
+  background-color: #ff0400;
+  font-weight: 800;
+  color: #ffffff;
+}
+.video-texto p .distancia {
+  color: #000000;
+}
+
+.km-texto {
+  color: #000000;
+  font-size: 2rem;
+}
+
+.informacion {
+  background-color: #ff0400;
+  padding: 5rem 0;
+}
+.informacion h3 {
+  text-align: center;
+  color: #ffffff;
+}
+.informacion-texto {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.informacion-texto img {
+  max-width: 100%;
+  width: 40rem;
+  display: block;
+  margin: 0 auto;
+}
+.informacion-texto p {
+  background-color: #ff3936;
+  font-weight: 800;
+  text-align: justify;
+  padding: 3rem;
 }/*# sourceMappingURL=app.css.map */
