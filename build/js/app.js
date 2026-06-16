@@ -1,6 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
+    bloquearNavegador();
     loopVideos();
 })
+
+function bloquearNavegador() {
+    const header = document.querySelector('.header');
+    const informacion = document.querySelector('.informacion');
+
+    document.addEventListener('scroll', function () {
+        if (informacion.getBoundingClientRect().top < 10000) {
+            header.classList.add('fixed');
+        } else {
+            header.classList.remove('fixed');
+        }
+    })
+
+
+}
 
 function loopVideos() {
     let numeroVideo = 1;
@@ -16,10 +32,10 @@ function loopVideos() {
 
     reproductor.addEventListener('ended', function () {
 
-        if (numeroVideo != limiteTiempo){
+        if (numeroVideo != limiteTiempo) {
             numeroVideo = numeroVideo + 1;
-               reproductor.src = `src/video/video${numeroVideo}.mp4`;      
-        }else{
+            reproductor.src = `src/video/video${numeroVideo}.mp4`;
+        } else {
             numeroVideo = 1;
             reproductor.src = `src/video/video${numeroVideo}.mp4`;
         }
