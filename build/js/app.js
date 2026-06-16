@@ -3,43 +3,43 @@ document.addEventListener('DOMContentLoaded', function () {
     loopVideos();
 })
 
+function bloquearNavegador() {
+    const header = document.querySelector('.header')
+    const informacion = document.querySelector('.informacion-texto')
 
-function bloquearNavegador(){
-    const header = document.querySelector('.header');
-    const informacion = document.querySelector('.informacion');
-
-    document.addEventListener('scroll', function(){
-        
-        if(informacion.getBoundingClientRect().bottom < 4000){
+    document.addEventListener('scroll', function () {
+        if (informacion.getBoundingClientRect().bottom < 1) {
             header.classList.add('fixed');
-            
-        }else{
+        } else {
             header.classList.remove('fixed');
-        }
 
+        }
     })
+
+
 }
 
 function loopVideos() {
-    const video = document.createElement('VIDEO');
-    const videoClass = document.querySelector('.video');
+    let numeroVideo = 1;
+    const limiteTiempo = 4;
 
-    contador = 1;
+    const reproductor = document.createElement("VIDEO");
+    const clasevideos = document.querySelector('.video')
+    reproductor.src = `src/video/video${numeroVideo}.mp4`
+    reproductor.muted = true;
+    reproductor.autoplay = true;
 
-    video.src = `src/video/video${contador}.mp4`;
-    video.autoplay = true;
-    video.muted = true;
-    videoClass.appendChild(video);
+    clasevideos.appendChild(reproductor);
 
-    video.addEventListener('ended', function () {
-        if (contador != 4) {
-            contador = contador + 1
-            video.src = `src/video/video${contador}.mp4`;
-        }else{
-            contador = 1
-            video.src = `src/video/video${contador}.mp4`;
+    reproductor.addEventListener('ended', function () {
+
+        if (numeroVideo == limiteTiempo) {
+            numeroVideo = 1
+            reproductor.src = `src/video/video${numeroVideo}.mp4`
+        } else {
+            numeroVideo = numeroVideo + 1
+            reproductor.src = `src/video/video${numeroVideo}.mp4`
         }
-
 
     })
 
