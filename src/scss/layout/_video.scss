@@ -11,7 +11,7 @@
         display: block;
         width: auto;
 
-        @include m.desktop {
+        @include m.desktopXL {
             width: 100%;
         }
     }

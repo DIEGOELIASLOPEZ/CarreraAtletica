@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     bloquearNavegador();
     loopVideos();
+    proximosEventos();
 })
 
 function bloquearNavegador() {
@@ -8,7 +9,7 @@ function bloquearNavegador() {
     const informacion = document.querySelector('.informacion');
 
     document.addEventListener('scroll', function () {
-        if (informacion.getBoundingClientRect().top < 1000) {
+        if (informacion.getBoundingClientRect().top < 0) {
             header.classList.add('fixed');
         } else {
             header.classList.remove('fixed');
@@ -43,4 +44,13 @@ function loopVideos() {
     })
 
 
+}
+
+function proximosEventos() {
+    const imagen = document.createElement('IMG');
+
+    const proximosEventos = document.querySelector('.proximos-eventos');
+        imagen.src = './src/img/img1.jpg'; 
+    
+    proximosEventos.appendChild(imagen);
 }

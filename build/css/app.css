@@ -383,7 +383,7 @@ img {
   left: 0;
   width: 100%;
 }
-@media (min-width: 1080px) {
+@media (min-width: 1200px) {
   .header {
     flex-direction: row;
     gap: 0;
@@ -460,7 +460,7 @@ img {
     margin-left: 10rem;
   }
 }
-@media (min-width: 1080px) {
+@media (min-width: 1200px) {
   .video-texto {
     flex-direction: row;
     margin-left: 30rem;
@@ -533,4 +533,16 @@ img {
   text-align: justify;
   padding: 3rem;
   margin: auto;
+}
+
+.proximos-eventos {
+  position: relative;
+  min-height: 60rem;
+  overflow: hidden;
+}
+.proximos-eventos img {
+  width: 100%;
+  margin-top: -20rem;
+  object-fit: cover;
+  object-position: center center;
 }/*# sourceMappingURL=app.css.map */
