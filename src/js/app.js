@@ -9,7 +9,7 @@ function bloquearNavegador() {
     const informacion = document.querySelector('.informacion');
 
     document.addEventListener('scroll', function () {
-        if (informacion.getBoundingClientRect().top < 0) {
+        if (informacion.getBoundingClientRect().top < 800) {
             header.classList.add('fixed');
         } else {
             header.classList.remove('fixed');
@@ -48,9 +48,39 @@ function loopVideos() {
 
 function proximosEventos() {
     const imagen = document.createElement('IMG');
-
     const proximosEventos = document.querySelector('.proximos-eventos');
-        imagen.src = './src/img/img1.jpg'; 
-    
+    let numImagenes = 1;
+    const MAX_IMAGENES = 5;
+    imagen.src = `./src/img/img${numImagenes}.jpg`;
+    imagen.classList.add('bg-imagen')
+
     proximosEventos.appendChild(imagen);
+
+    setInterval(function () {
+        imagen.classList.remove('fade-in');
+        imagen.classList.add('fade-out');
+
+        setTimeout(() => {
+            if (numImagenes < MAX_IMAGENES) {
+                numImagenes++
+
+            } else {
+                numImagenes = 1
+            }
+            imagen.src = `./src/img/img${numImagenes}.jpg`;
+            imagen.classList.remove('fade-out');
+            imagen.classList.add('fade-in');
+
+        }, 800)
+
+    }, 4000);
+
+
+
+
+    proximosEventos.prepend(imagen);
+
+
+
+
 }
