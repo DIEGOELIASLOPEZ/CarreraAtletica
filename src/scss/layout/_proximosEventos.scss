@@ -1,29 +1,31 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
 
+
+// Seccion completeta
 .proximos-eventos {
     background-color: v.$negro;
 
-
     position: relative;
     overflow: hidden;
+    height: 40rem;
     min-height: 50rem;
+
 
     @include m.tablet {
         height: 80rem;
     }
-
-
 
     .bg-imagen {
         width: 100%;
         object-fit: cover;
         object-position: center center;
 
-        &.fade-in{
-            animation: fadeIn ease-in 1s forwards ;
+        &.fade-in {
+            animation: fadeIn ease-in 1s forwards;
         }
-        &.fade-out{
+
+        &.fade-out {
             animation: fadeOut ease-in 1s forwards;
         }
 
@@ -38,67 +40,127 @@
     inset: 0;
 
     h3 {
+        font-size: 3rem;
         text-align: center;
-        margin: 5rem;
-        color: v.$negro;
+        margin: 5rem 0;
+        color: v.$blanco;
+
+        @include m.tablet {
+            font-size: 5rem;
+            margin: 5rem;
+        }
+
     }
+
 
 }
 
 .informacion-contenido {
-
     background-color: rgba(v.$gris-medio, 0.9);
     border-radius: 5rem;
-    padding: 4rem;
-    @include m.contenedor;
-    display: flex;
-    gap: 6rem;
-    align-items: center;
+    margin: 5rem 2rem;
+    padding: 1rem;
 
+
+    @include m.tablet {
+        padding: 4rem;
+    }
 
     img {
-        width: 30%;
-        height: auto;
+        width: 0
     }
 
+    .datos {
+        @include m.grid(2);
+        gap: 0;
+        margin: 1rem;
 
-    .carrea-desc {
-        margin: 0;
-        font-weight: 600;
-        color: v.$negro;
-        text-align: justify;
-        font-size: 4rem;
-    }
-
-    button {
-
-        width: 100%;
-        cursor: pointer;
-        background-color: v.$rosa;
-        font-size: 3rem;
-        border: none;
-        padding: 1.5rem;
-        border-radius: 10rem;
-
-        &:hover {
-            background-color: v.$rojo;
+        @include m.tablet {
+            gap: 1rem;
         }
     }
 
-}
-
-.datos-info {
-    p {
-        color: v.$blanco;
-        text-transform: uppercase;
-        font-size: 3rem;
+    .carrea-desc {
+        line-height: 2.5rem;
+        margin: 2rem 0;
+        grid-column: 1/3;
+        font-size: 2.5rem;
         text-align: center;
+        font-weight: 600;
+
     }
 
-    margin-bottom: 2rem;
+
+    @include m.tablet {
+        display: flex;
+        gap: 6rem;
+        align-items: center;
+
+        img {
+            width: 30%;
+            height: auto;
+        }
+
+        .carrea-desc {
+
+            color: v.$negro;
+            text-align: justify;
+            font-size: 4rem;
+        }
+    }
+
+    .datos-info {
+        p {
+            color: v.$blanco;
+            text-transform: uppercase;
+            margin: 0;
+
+        }
+
+        @include m.tablet {
+            p {
+                font-size: 3rem;
+            }
+        }
+
+        margin-bottom: 2rem;
+
+
+    }
 
 
 }
+
+
+button {
+    cursor: pointer;
+    background-color: v.$rosa;
+    border: none;
+    border-radius: 10rem;
+
+    margin: auto 0;
+    font-size: 1.5rem;
+    height: 50%;
+
+
+
+    &:hover {
+        background-color: v.$rojo;
+    }
+
+    @include m.tablet {
+        width: 100%;
+        font-size: 3rem;
+
+    }
+
+}
+
+
+
+
+
+
 
 @keyframes fadeIn {
     0% {

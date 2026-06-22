@@ -542,6 +542,7 @@ img {
   background-color: #000000;
   position: relative;
   overflow: hidden;
+  height: 40rem;
   min-height: 50rem;
 }
 @media (min-width: 768px) {
@@ -567,54 +568,99 @@ img {
   inset: 0;
 }
 .informacion-eventos h3 {
+  font-size: 3rem;
   text-align: center;
-  margin: 5rem;
-  color: #000000;
+  margin: 5rem 0;
+  color: #ffffff;
+}
+@media (min-width: 768px) {
+  .informacion-eventos h3 {
+    font-size: 5rem;
+    margin: 5rem;
+  }
 }
 
 .informacion-contenido {
   background-color: rgba(64, 64, 64, 0.9);
   border-radius: 5rem;
-  padding: 4rem;
-  width: 95%;
-  max-width: 120rem;
-  margin: 0 auto;
-  display: flex;
-  gap: 6rem;
-  align-items: center;
+  margin: 5rem 2rem;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .informacion-contenido {
+    padding: 4rem;
+  }
 }
 .informacion-contenido img {
-  width: 30%;
-  height: auto;
+  width: 0;
+}
+.informacion-contenido .datos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  gap: 0;
+  margin: 1rem;
+}
+@media (min-width: 768px) {
+  .informacion-contenido .datos {
+    gap: 1rem;
+  }
 }
 .informacion-contenido .carrea-desc {
-  margin: 0;
+  line-height: 2.5rem;
+  margin: 2rem 0;
+  grid-column: 1/3;
+  font-size: 2.5rem;
+  text-align: center;
   font-weight: 600;
-  color: #000000;
-  text-align: justify;
-  font-size: 4rem;
 }
-.informacion-contenido button {
-  width: 100%;
-  cursor: pointer;
-  background-color: #ff7673;
-  font-size: 3rem;
-  border: none;
-  padding: 1.5rem;
-  border-radius: 10rem;
+@media (min-width: 768px) {
+  .informacion-contenido {
+    display: flex;
+    gap: 6rem;
+    align-items: center;
+  }
+  .informacion-contenido img {
+    width: 30%;
+    height: auto;
+  }
+  .informacion-contenido .carrea-desc {
+    color: #000000;
+    text-align: justify;
+    font-size: 4rem;
+  }
 }
-.informacion-contenido button:hover {
-  background-color: #c41f1c;
-}
-
-.datos-info p {
+.informacion-contenido .datos-info p {
   color: #ffffff;
   text-transform: uppercase;
-  font-size: 3rem;
-  text-align: center;
+  margin: 0;
 }
-.datos-info {
+@media (min-width: 768px) {
+  .informacion-contenido .datos-info p {
+    font-size: 3rem;
+  }
+}
+.informacion-contenido .datos-info {
   margin-bottom: 2rem;
+}
+
+button {
+  cursor: pointer;
+  background-color: #ff7673;
+  border: none;
+  border-radius: 10rem;
+  margin: auto 0;
+  font-size: 1.5rem;
+  height: 50%;
+}
+button:hover {
+  background-color: #c41f1c;
+}
+@media (min-width: 768px) {
+  button {
+    width: 100%;
+    font-size: 3rem;
+  }
 }
 
 @keyframes fadeIn {
