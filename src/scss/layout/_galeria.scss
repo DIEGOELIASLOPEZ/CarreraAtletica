@@ -1,0 +1,97 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.galeria {
+    @include m.contenedor;
+
+    h3 {
+        margin: 5rem;
+        text-align: center;
+    }
+
+
+    .galeria-imagenes {
+        @include m.grid(1);
+        gap: 3rem;
+
+        @include m.telefono {
+            @include m.grid(2)
+        }
+
+        @include m.tablet {
+            @include m.grid(4)
+        }
+
+        display: grid;
+        place-items: center;
+
+        img {
+            cursor: pointer;
+            max-width: 100rem;
+
+            &:hover {
+                outline: 3.5px solid v.$negro;
+                filter: brightness(0.5);
+
+            }
+        }
+    }
+}
+
+.modal {
+    inset: 0;
+    background-color: rgba(v.$negro, 0.8);
+    position: fixed;
+
+    display: grid;
+    place-items: center;
+
+    animation: fadeIn ease-in 0.5s;
+
+    &.fade-out {
+        animation: fadeOut ease-in 0.5s;
+    }
+
+    img {
+        max-width: 100rem;
+        height: auto;
+    }
+
+    .btn-modal {
+        cursor: pointer;
+        font-family: v.$fuente-principal;
+        padding: 1rem 1.2rem;
+        border-radius: 50%;
+        border: none;
+
+        background-color: v.$rosa;
+
+        &:hover {
+            background-color: v.$rojo;
+        }
+
+    }
+}
+
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

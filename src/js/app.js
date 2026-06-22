@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     bloquearNavegador();
     loopVideos();
     proximosEventos();
+    galeria();
 })
 
 function bloquearNavegador() {
@@ -83,4 +84,64 @@ function proximosEventos() {
 
 
 
+}
+
+function galeria() {
+    const galeria = document.querySelector('.galeria-imagenes');
+    const NUM_IMAGNES = 16;
+
+    for (let i = 1; i <= NUM_IMAGNES; i++) {
+        const img = document.createElement('IMG');
+        img.src = `src/img/gallery/${i}.jpg`
+        galeria.appendChild(img);
+
+        img.addEventListener('click', function () {
+            mostrarImagen(i);
+        })
+
+    }
+
+}
+
+function mostrarImagen(i) {
+
+    const body = document.querySelector('body');
+    const header = document.querySelector('header');
+    const modal = document.createElement('DIV');
+    const img = document.createElement('IMG');
+    const btnModal = document.createElement('button')
+
+    img.src = `src/img/gallery/${i}.jpg`
+
+    modal.classList.add('modal')
+    body.classList.add('overflow-hiden')
+    btnModal.classList.add('btn-modal')
+    header.classList.remove('fixed');
+
+    btnModal.textContent = "X"
+
+    modal.onclick = cerrarModal;
+    btnModal.onclick = cerrarModal;
+
+
+    modal.appendChild(img)
+    modal.appendChild(btnModal)
+    body.appendChild(modal)
+
+}
+function cerrarModal() {
+    const header = document.querySelector('header');
+    const modal = document.querySelector('.modal');
+
+    modal.classList.add('fade-out');
+    setTimeout(() => {
+        if (modal) {
+            modal.remove();
+        }
+
+    }, 500);
+    header.classList.add('fade-in');
+    const body = document.querySelector('body')
+    header.classList.add('fixed')
+    body.classList.remove('overflow-hiden')
 }

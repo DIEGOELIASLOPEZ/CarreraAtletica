@@ -5,9 +5,18 @@
     background-color: v.$rojo;
     padding: 5rem 0;
 
+    @include m.tablet {
+         padding: 10rem 0;
+    }
+
     h3 {
         text-align: center;
         color: v.$blanco;
+        font-size: 3rem;
+
+        @include m.tablet {
+            font-size: 5.2rem
+        }
     }
 
     &-texto {

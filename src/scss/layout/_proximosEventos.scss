@@ -64,6 +64,9 @@
 
     @include m.tablet {
         padding: 4rem;
+        width: 50%;
+        display: block;
+        margin: auto;
     }
 
     img {
@@ -81,7 +84,7 @@
     }
 
     .carrea-desc {
-        line-height: 2.5rem;
+        line-height: 4rem;
         margin: 2rem 0;
         grid-column: 1/3;
         font-size: 2.5rem;
@@ -91,7 +94,44 @@
     }
 
 
+    @include m.desktop {
+        display: flex;
+        gap: 6rem;
+        align-items: center;
+
+        img {
+            width: 30%;
+            height: auto;
+        }
+
+        .carrea-desc {
+
+            color: v.$negro;
+            text-align: justify;
+            font-size: 4rem;
+        }
+    }
+
     @include m.tablet {
+        display: flex;
+        gap: 0rem;
+        align-items: center;
+
+        img {
+            width: 0%;
+            height: auto;
+        }
+
+        .carrea-desc {
+
+            color: v.$negro;
+            text-align: justify;
+            font-size: 3rem;
+        }
+
+    }
+
+    @include m.desktop {
         display: flex;
         gap: 6rem;
         align-items: center;
@@ -119,6 +159,12 @@
 
         @include m.tablet {
             p {
+                font-size: 2rem;
+            }
+        }
+
+        @include m.desktop {
+            p {
                 font-size: 3rem;
             }
         }
@@ -132,7 +178,7 @@
 }
 
 
-button {
+.btn-info {
     cursor: pointer;
     background-color: v.$rosa;
     border: none;
@@ -150,7 +196,15 @@ button {
 
     @include m.tablet {
         width: 100%;
-        font-size: 3rem;
+        font-size: 2rem;
+        height: 40%;
+
+    }
+
+    @include m.desktop {
+        width: 100%;
+        height: 40%;
+        font-size: 2.5rem;
 
     }
 
