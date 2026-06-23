@@ -1,0 +1,73 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.rutas {
+    padding: 5rem 0;
+    background-color: v.$rojo;
+
+    .contenido {
+        @include m.contenedor;
+
+        h3 {
+            text-align: center;
+        }
+    }
+
+
+}
+
+
+.alcaldias {
+    @include m.grid(1);
+
+    @include m.telefono {
+        @include m.grid(2);
+    }
+    @include m.desktop {
+        @include m.grid(3);
+    }
+
+    gap: 5rem;
+
+    .alcaldia {
+        background-color: v.$gris-claro;
+        border-radius: 7rem;
+        border: none;
+        cursor: pointer;
+
+        @include m.grid(2);
+        align-items: center;
+        gap: 5rem;
+
+        width: 100%;
+        max-width: 45rem;
+
+        height: 100%;
+        max-height: 20rem;
+        justify-self: center;
+
+        font-size: 2.3rem;
+        font-family: v.$fuente-secundaria;
+        color: v.$blanco;
+        font-weight: 900;
+
+        padding: 1rem 2rem;
+        margin: 0;
+
+
+        &:hover {
+            background-color: v.$rosa;
+        }
+
+
+        img {
+
+            width: 100%;
+            max-width: 20rem;
+            height: auto;
+        }
+
+
+    }
+
+}

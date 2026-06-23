@@ -3,9 +3,9 @@
 
 .galeria {
     @include m.contenedor;
+    padding: 5rem 0;
 
     h3 {
-        margin: 5rem;
         text-align: center;
     }
 

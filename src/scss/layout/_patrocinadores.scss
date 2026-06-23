@@ -1,0 +1,18 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.patrocinadores {
+    @include m.contenedor;
+    padding: 5rem 0;
+
+    h3 {
+        text-align: center;
+        margin: 0;
+    }
+
+    img {
+        padding-top: 5rem;
+        width: 60%;
+        margin: auto;
+    }
+}

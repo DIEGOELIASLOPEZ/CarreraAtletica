@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     loopVideos();
     proximosEventos();
     galeria();
+    rutas();
+    scrollNav();
 })
 
 function bloquearNavegador() {
@@ -144,4 +146,69 @@ function cerrarModal() {
     const body = document.querySelector('body')
     header.classList.add('fixed')
     body.classList.remove('overflow-hiden')
+}
+
+function rutas() {
+    const rutasSeccion = document.querySelector('.alcaldias');
+    const alcaldias = {
+        "Alvaro Obregon": "AlvaroObregon",
+        "Azcapozalco": "Azcapozalco",
+        "Benito Juarez": "BenitoJuarez",
+        "Coyoacan": "Coyoacan",
+        "Cuahtemoc": "Cuahtemoc",
+        "Cuajimalpa": "Cuajimalpa",
+        "Gustavo A. Madero": "GustavoAMadero",
+        "Iztacalco": "Iztacalco",
+        "Magdalena Contreras": "MagdalenaContreras",
+        "Miguel Hidalgo": "MiguelHidalgo",
+        "Milpa Alta": "MilpaAlta",
+        "Tlahuac": "Tlahuac",
+        "Tlalpan": "Tlalpan",
+        "Venustiano Carranza": "VenustianoCarranza",
+        "Xochimilco": "Xochimilco"
+    }
+
+
+
+    const llaves = Object.keys(alcaldias);
+
+    for (let i = 0; i < llaves.length; i++) {
+        const btn = document.createElement('BUTTON')
+        const img = document.createElement('IMG')
+
+
+        const clave = llaves[i];
+        const valor = alcaldias[clave];
+        img.src = `src/img/rutes/${valor}.png`
+
+        btn.textContent = clave
+
+        btn.classList.add('alcaldia')
+
+        rutasSeccion.appendChild(btn)
+        btn.appendChild(img)
+
+
+    }
+
+    // 
+    // 
+    // 
+    // 
+
+}
+
+function scrollNav(){
+    const navLinks = document.querySelectorAll('.header-informacion a')
+
+    navLinks.forEach(link =>{
+        link.addEventListener('click', e =>{
+            e.preventDefault();
+            const sectionScroll = e.target.getAttribute('href')
+            const section = document.querySelector(sectionScroll)
+
+            section.scrollIntoView({ behavior: 'smooth' })
+        })
+    })
+    
 }
